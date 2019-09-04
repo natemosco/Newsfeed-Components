@@ -102,7 +102,39 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+*/
+const $  = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+function articleBuild(title, date, p1, p2, p3){
+  const articleDiv = document.createElement("div");
+  const h2 = document.createElement("h2");
+  const date = document.createElement("p");
+  const pOne = document.createElement("p");
+  const pTwo = document.createElement("p");
+  const pThree = document.createElement("p");
+  const span = document.createElement("span");
 
+  articleDiv.classList.add("article");
+  date.classList.add("date");
+  span.classList.add("expandButton");
+  
+  articleDiv.append(h2);
+  articleDiv.append(date);
+  articleDiv.append(pOne);
+  articleDiv.append(pTwo);
+  articleDiv.append(pThree);
+  articleDiv.append(span);
+
+  h2.textContent = title;
+  date.textContent = date;
+  pOne = p1;
+  pTwo = p2;
+  pThree = p3;
+
+  return articleDiv;
+}
+
+/*
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
